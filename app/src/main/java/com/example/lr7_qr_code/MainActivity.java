@@ -76,10 +76,23 @@ public class MainActivity extends AppCompatActivity {
     ActivityResultLauncher<ScanOptions> barLauncher = registerForActivityResult(new ScanContract(), result -> {
         if(result.getContents() != null)
         {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-            builder.setTitle("Результат");
-            builder.setMessage(result.getContents());
-            builder.show();
+            if(result.getContents() == "VK")
+            {
+                
+            }
+            else if (result.getContents() == "Telegram")
+            {
+
+                
+            }
+            else if (result.getContents() == "WhatsApp")
+            {
+                
+            }
+//            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+//            builder.setTitle("Результат");
+//            builder.setMessage(result.getContents());
+//            builder.show();
         }
     });
 
