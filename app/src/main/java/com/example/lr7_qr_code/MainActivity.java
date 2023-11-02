@@ -14,6 +14,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView imageView;
     Button button;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,18 +79,24 @@ public class MainActivity extends AppCompatActivity {
     ActivityResultLauncher<ScanOptions> barLauncher = registerForActivityResult(new ScanContract(), result -> {
         if(result.getContents() != null)
         {
-            if(result.getContents() == "VK")
-            {
-                
-            }
-            else if (result.getContents() == "Telegram")
-            {
 
-                
-            }
-            else if (result.getContents() == "WhatsApp")
+            if(result.getContents().toString().equals("VK"))
             {
-                
+                Intent intent = new Intent(MainActivity.this, VKActivity.class);
+                startActivity(intent);
+            }
+            else if (result.getContents().toString().equals("Telegram"))
+            {
+                Intent intent = new Intent(MainActivity.this, TelegramActivity.class);
+                startActivity(intent);
+            }
+            else if (result.getContents().toString().equals("WhatsApp"))
+            {
+                Intent intent = new Intent(MainActivity.this, WhatsAppActivity.class);
+                startActivity(intent);
+            }
+            else{
+                Log.d("Внимание", "ОШИБКА");
             }
 //            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 //            builder.setTitle("Результат");
