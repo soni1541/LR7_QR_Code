@@ -7,6 +7,17 @@
     tools:context=".MainActivity">
 
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="237dp"
+        android:layout_height="43dp"
+        android:layout_margin="30dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="60dp"
+        android:text="Казунина Софья Т-403901 ИСиТ" />
+
     <ImageView
         android:id="@+id/image_screen"
         android:layout_width="match_parent"
